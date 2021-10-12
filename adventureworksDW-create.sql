@@ -299,4 +299,4 @@ CREATE TABLE FactInternetSales
 	Freight decimal(22,2) NULL,
 	CarrierTrackingNumber varchar(25) NULL,
 	CustomerPONumber varchar(25) NULL
-	);
+);
