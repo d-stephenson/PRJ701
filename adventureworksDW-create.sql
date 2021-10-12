@@ -3,7 +3,8 @@ create database aw;
 
 use aw;
 
-CREATE TABLE DimAccount(
+CREATE TABLE DimAccount
+(
 	AccountKey int PRIMARY KEY NOT NULL,
 	ParentAccountKey int NULL,
 	AccountCodeAlternateKey int NULL,
@@ -14,17 +15,17 @@ CREATE TABLE DimAccount(
 	CustomMembers varchar(300) NULL,
 	ValueType varchar(50) NULL,
 	CustomMemberOptions varchar(200) NULL
-	);
+);
 	
-CREATE TABLE DimCurrency(
+CREATE TABLE DimCurrency
+(
 	CurrencyKey int PRIMARY KEY NOT NULL,
 	CurrencyAlternateKey char(3) NOT NULL,
 	CurrencyName varchar(50) NOT NULL
-	);
+);
 
-
-
-CREATE TABLE DimCustomer(
+CREATE TABLE DimCustomer
+(
 	CustomerKey int PRIMARY KEY NOT NULL,
 	GeographyKey int NULL,
 	CustomerAlternateKey varchar(15) NOT NULL,
@@ -50,15 +51,17 @@ CREATE TABLE DimCustomer(
 	Phone varchar(20) NULL,
 	DateFirstPurchase TIMESTAMP NULL,
 	CommuteDistance varchar(15) NULL
-	);
+);
 
-CREATE TABLE DimDepartmentGroup(
+CREATE TABLE DimDepartmentGroup
+(
 	DepartmentGroupKey int PRIMARY KEY NOT NULL,
 	ParentDepartmentGroupKey int NULL,
 	DepartmentGroupName varchar(50) NULL
-	);
+);
 	
-CREATE TABLE DimEmployee(
+CREATE TABLE DimEmployee
+(
 	EmployeeKey int PRIMARY KEY NOT NULL,
 	ParentEmployeeKey int NULL,
 	EmployeeNationalIDAlternateKey varchar(15) NULL,
@@ -89,9 +92,10 @@ CREATE TABLE DimEmployee(
 	StartDate bigint NULL,
 	EndDate bigint NULL,
 	Status varchar(50) NULL
-	);
+);
 	
-CREATE TABLE DimGeography(
+CREATE TABLE DimGeography
+(
 	GeographyKey int PRIMARY KEY NOT NULL,
 	City varchar(30) NULL,
 	StateProvinceCode varchar(3) NULL,
@@ -101,18 +105,20 @@ CREATE TABLE DimGeography(
 	SpanishCountryRegionName varchar(50) NULL,
 	FrenchCountryRegionName varchar(50) NULL,
 	PostalCode varchar(15) NULL,
-	SalesTerritoryKey int NULL);
+	SalesTerritoryKey int NULL
+);
 	
-	
-CREATE TABLE DimOrganization(
+CREATE TABLE DimOrganization
+(
 	OrganizationKey int PRIMARY KEY NOT NULL,
 	ParentOrganizationKey int NULL,
 	PercentageOfOwnership varchar(16) NULL,
 	OrganizationName varchar(50) NULL,
-	CurrencyKey int NULL);
+	CurrencyKey int NULL
+);
 	
-	
-CREATE TABLE DimProduct(
+CREATE TABLE DimProduct
+(
 	ProductKey int PRIMARY KEY NOT NULL,
 	ProductAlternateKey varchar(25) NULL,
 	ProductSubcategoryKey int NULL,
@@ -137,24 +143,30 @@ CREATE TABLE DimProduct(
 	EnglishDescription varchar(400) NULL,
 	StartDate TIMESTAMP NULL,
 	EndDate TIMESTAMP NULL,
-	Status varchar(7) NULL);
+	Status varchar(7) NULL
+);
 
-CREATE TABLE DimProductCategory(
+CREATE TABLE DimProductCategory
+(
 	ProductCategoryKey int PRIMARY KEY NOT NULL,
 	ProductCategoryAlternateKey int NULL,
 	EnglishProductCategoryName varchar(50) NOT NULL,
 	SpanishProductCategoryName varchar(50) NOT NULL,
-	FrenchProductCategoryName varchar(50) NOT NULL);
+	FrenchProductCategoryName varchar(50) NOT NULL
+);
 	
-CREATE TABLE DimProductSubcategory(
+CREATE TABLE DimProductSubcategory
+(
 	ProductSubcategoryKey int PRIMARY KEY NOT NULL,
 	ProductSubcategoryAlternateKey int NULL,
 	EnglishProductSubcategoryName varchar(50) NOT NULL,
 	SpanishProductSubcategoryName varchar(50) NOT NULL,
 	FrenchProductSubcategoryName varchar(50) NOT NULL,
-	ProductCategoryKey int NULL);
+	ProductCategoryKey int NULL
+);
 	
-CREATE TABLE DimPromotion(
+CREATE TABLE DimPromotion
+(
 	PromotionKey int PRIMARY KEY NOT NULL,
 	PromotionAlternateKey int NULL,
 	EnglishPromotionName varchar(255) NULL,
@@ -171,9 +183,10 @@ CREATE TABLE DimPromotion(
 	EndDate bigint NULL,
 	MinQty int NULL,
 	MaxQty int NULL
-	);
+);
 	
-CREATE TABLE DimReseller(
+CREATE TABLE DimReseller
+(
 	ResellerKey int PRIMARY KEY NOT NULL,
 	GeographyKey int NULL,
 	ResellerAlternateKey varchar(15) NULL,
@@ -193,28 +206,34 @@ CREATE TABLE DimReseller(
 	MinPaymentType bigint NULL,
 	MinPaymentAmount decimal(22,2) NULL,
 	AnnualRevenue decimal(22,2) NULL,
-	YearOpened int NULL);
+	YearOpened int NULL
+);
 	
-CREATE TABLE DimSalesReason(
+CREATE TABLE DimSalesReason
+(
 	SalesReasonKey int PRIMARY KEY NOT NULL,
 	SalesReasonAlternateKey int NOT NULL,
 	SalesReasonName varchar(50) NOT NULL,
-	SalesReasonReasonType varchar(50) NOT NULL);
+	SalesReasonReasonType varchar(50) NOT NULL
+);
 	
-CREATE TABLE DimSalesTerritory(
+CREATE TABLE DimSalesTerritory
+(
 	SalesTerritoryKey int PRIMARY KEY NOT NULL,
 	SalesTerritoryAlternateKey int NULL,
 	SalesTerritoryRegion varchar(50) NOT NULL,
 	SalesTerritoryCountry varchar(50) NOT NULL,
-	SalesTerritoryGroup varchar(50) NULL);
+	SalesTerritoryGroup varchar(50) NULL
+);
 	
-CREATE TABLE DimScenario(
+CREATE TABLE DimScenario
+(
 	ScenarioKey int PRIMARY KEY NOT NULL,
 	ScenarioName varchar(50) NULL
-	);
+);
 	
-
-CREATE TABLE DimTime(
+CREATE TABLE DimTime
+(
 	TimeKey int PRIMARY KEY NOT NULL,
 	FullDateAlternateKey TIMESTAMP NULL,
 	DayNumberOfWeek bigint NULL,
@@ -234,9 +253,9 @@ CREATE TABLE DimTime(
 	FiscalQuarter bigint NULL,
 	FiscalYear char(4) NULL,
 	FiscalSemester bigint NULL
-	);
+);
   
-  
+
 CREATE TABLE FactCurrencyRate
 (
 	CurrencyKey int NOT NULL,
@@ -245,8 +264,8 @@ CREATE TABLE FactCurrencyRate
 	EndOfDayRate float NOT NULL
 );
   
-	
-CREATE TABLE FactFinance(
+CREATE TABLE FactFinance
+(
 	TimeKey int NULL,
 	OrganizationKey int NULL,
 	DepartmentGroupKey int NULL,
@@ -255,7 +274,8 @@ CREATE TABLE FactFinance(
 	Amount float NULL
 ) ;
 
-CREATE TABLE FactInternetSales(
+CREATE TABLE FactInternetSales
+(
 	ProductKey int NOT NULL,
 	OrderDateKey int NOT NULL,
 	DueDateKey int NOT NULL,
