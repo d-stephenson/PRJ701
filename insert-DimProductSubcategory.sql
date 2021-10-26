@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DimProductSubcategory;
+-- TRUNCATE TABLE DimProductSubcategory;
 
 BEGIN;
 

@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DIMTIME;
+-- TRUNCATE TABLE DIMTIME;
 
 begin;
 

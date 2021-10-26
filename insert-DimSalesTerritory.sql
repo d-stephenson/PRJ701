@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DimSalesTerritory;
+-- TRUNCATE TABLE DimSalesTerritory;
 
 BEGIN;
 

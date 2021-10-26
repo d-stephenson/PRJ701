@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DimPromotion;
+-- TRUNCATE TABLE DimPromotion;
 
 BEGIN;
 

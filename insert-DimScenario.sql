@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DimScenario;
+-- TRUNCATE TABLE DimScenario;
 
 BEGIN;
 

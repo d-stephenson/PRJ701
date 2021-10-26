@@ -1,6 +1,6 @@
 use aw;
 
-truncate DimAccount;
+-- truncate DimAccount;
 
 BEGIN;
 

@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DimSalesReason;
+-- TRUNCATE TABLE DimSalesReason;
 
 BEGIN;
 

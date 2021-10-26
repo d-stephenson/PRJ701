@@ -1,6 +1,6 @@
 use aw;
 
-TRUNCATE TABLE DimOrganization;
+-- TRUNCATE TABLE DimOrganization;
 
 BEGIN;
 
