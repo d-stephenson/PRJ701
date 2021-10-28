@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimCurrency;
+TRUNCATE TABLE DimCurrency;
 
 BEGIN;
 
