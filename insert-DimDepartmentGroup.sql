@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimDepartmentGroup;
+TRUNCATE TABLE DimDepartmentGroup;
 
 BEGIN;
 
