@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimGeography;
+TRUNCATE TABLE DimGeography;
 
 BEGIN;
 

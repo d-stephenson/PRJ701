@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimEmployee;
+TRUNCATE TABLE DimEmployee;
 
 BEGIN;
 
