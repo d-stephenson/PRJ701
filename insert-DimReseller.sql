@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimReseller;
+TRUNCATE TABLE DimReseller;
 
 BEGIN;
 

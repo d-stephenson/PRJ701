@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimProductSubcategory;
+TRUNCATE TABLE DimProductSubcategory;
 
 BEGIN;
 
@@ -44,4 +42,3 @@ SELECT 36, 36, 'Pumps', 'Bomba', 'Pompe', 4 FROM DUAL UNION ALL
 SELECT 37, 37, 'Tires and Tubes', 'Cubierta y cámara', 'Pneu et chambre à air', 4 FROM DUAL;
 
 COMMIT;
-

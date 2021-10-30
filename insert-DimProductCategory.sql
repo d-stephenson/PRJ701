@@ -1,6 +1,4 @@
-use aw;
-
--- TRUNCATE TABLE DimProductCategory;
+TRUNCATE TABLE DimProductCategory;
 
 BEGIN;
 
