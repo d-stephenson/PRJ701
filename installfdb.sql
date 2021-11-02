@@ -1,3 +1,5 @@
+-- Insert from CSV
+
 DROP DATABASE SCOPED CREDENTIAL MyAzureBlobStorageCredentialFDB
 
 CREATE DATABASE SCOPED CREDENTIAL MyAzureBlobStorageCredentialFDB
@@ -21,3 +23,24 @@ WITH (
     KEEPIDENTITY,
     TABLOCK
 );
+
+-- Connect to FinanceDB database server to FinanceDW database server 
+
+CREATE MASTER KEY;
+GO
+
+-- credential maps to a login or contained user used to connect to remote database 
+CREATE DATABASE SCOPED CREDENTIAL CrossDbCred -- credential name
+WITH IDENTITY = 'CrossDb',                    -- login or contained user name
+SECRET = 'Str0ngP@ssword';                    -- login or contained user password
+GO
+
+CREATE EXTERNAL DATA SOURCE FinanceDB
+WITH
+(
+    TYPE=RDBMS,                             -- data source type
+    LOCATION='FinanceDB.database.windows.net', -- Azure SQL Database server name
+    DATABASE_NAME='FinanceDB',           -- database name
+    CREDENTIAL=CrossDbCred                  -- credential used to connect to server / database  
+);
+GO
