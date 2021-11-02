@@ -44,3 +44,16 @@ WITH
     CREDENTIAL=CrossDbCred                  -- credential used to connect to server / database  
 );
 GO
+
+CREATE EXTERNAL TABLE [dbo].[Finance_Development_Country]
+(
+	CountryID tinyint,
+	CountryName nvarchar 
+)
+WITH (DATA_SOURCE = [FinanceDB],  -- data source 
+      SCHEMA_NAME = 'dbo',           -- external table schema
+      OBJECT_NAME = 'Country'       -- name of table in external database
+     );
+GO
+
+select * from dbo.Finance_Development_Country
