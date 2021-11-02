@@ -25,6 +25,7 @@ WITH (
 );
 
 -- Connect to FinanceDB database server to FinanceDW database server 
+-- https://www.mssqltips.com/sqlservertip/6445/azure-sql-cross-database-query/
 
 CREATE MASTER KEY;
 GO
